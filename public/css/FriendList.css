@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.Maindiv {
+    background-color: brown;
+    width: 100%;
+    background: #eab92d;
+    background: -moz-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #eab92d), color-stop(99%, #c79810));
+    background: -webkit-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
+    background: -o-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
+    background: -ms-radial-gradient(center, ellipse cover, #eab92d 57%, #c79810 99%);
+    background: radial-gradient(ellipse at center, #eab92d 57%, #c79810 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eab92d', endColorstr='#c79810', GradientType=1);
+
+}
+div {
+    text-align: justify;
+}
+
+div img {
+    display: inline-block;
+}
+
+div:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+.alamgir {
+	float: left;
+	color: black;
+	margin-left: 2%;
+}
+.usama {
+	float: left;
+	padding-top: 0.1%;
+	color: black;
+	margin-left: 3%;
+}
+.muneeb {
+	clear: right;
+	float: right;
+	color: black;
+	margin-left: 1%;
+	margin-right: 2%;
+}
+.awais {
+	clear: left;
+	float: left;
+	color: black;
+	margin-left: 2%;
+}
+
+.danish {
+	float: left;
+	padding-top: 0.1%;
+	color: black;
+	margin-left: 3%;
+}
+.zunnurain {
+	clear: right;
+	float: right;
+	color: black;
+	margin-left: 1%;
+	margin-right: 2%
+}
+.img {
+	height: 20%;
+	width: 20%;
+}

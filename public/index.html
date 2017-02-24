@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+	<title>Friend List in React</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/FriendList.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/babel">
+	var Main =React.createClass({
+	render:function(){
+        return (<div className="Maindiv container-fluid">
+            <h1>Friend List</h1>
+            <Alamgir name = "Alamgir" />
+            <Usama name = "Usama" />
+            <Muneeb  name = "Muneeb" />
+            <Awais name = "Awais" />
+            <Danish name = "Danish" />
+            <Zunnurain name = "Zunnurain" />
+            </div>);
+    }
+    });
+    var Alamgir =React.createClass({
+        getInitialState:function(){
+            return {editing:false};
+        },
+        handleDesc:function(){
+            this.setState({editing:true})
+        },
+        save:function(){
+            this.props.name = this.refs.newNameAlam.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+       if(this.state.editing)
+            {
+             return (
+                 <div>
+                    <div className="alamgir">
+				<textarea ref="newNameAlam" defaultValue={this.props.name} 
+            className="form-control"></textarea>
+            <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Node js Kolaboard</p>
+				<p>Partner:Zunnurain</p>
+				<img src="images\alamgir.jpg" alt="Alamgir" width="400px" height="600px" />
+			</div>
+                 </div>
+             );
+            }
+            else
+            {
+             return (
+                <div className="alamgir">
+                    <h1 ref="name">{this.props.name}</h1>
+                    <button  onClick={this.handleDesc}
+                                className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+                    <p>Node js Kolaboard</p>
+                    <p>Partner:Zunnurain</p>
+                    <img src="images\alamgir.jpg" alt="Alamgir" width="400px" height="600px" />
+                </div>
+        );
+            }
+    }
+    });
+    var Usama =React.createClass({
+         getInitialState:function(){
+            return {editing:true};
+        },
+        save:function(){
+            this.props.name = this.refs.newNameUsama.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+        if(this.state.editing)
+        {
+        return (
+            <div className="usama">
+				<h1 ref="name">{this.props.name}</h1>
+				<button   onClick={this.handleDesc}
+                            className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+				<p>Node js WeGuide</p>
+				<p>Partner:Muneeb</p>
+				<img src="images\usama.jpg" alt="Usama" width="400px" height="600px"/>
+			</div>
+            );
+        }
+        else
+        {
+            return
+            (
+          <div className="usama">
+				<textarea ref="newNameUsama" defaultValue={this.props.name="Usama"} 
+    	        className="form-control"></textarea>
+ 	    	    <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Node js WeGuide</p>
+				<p>Partner:Muneeb</p>
+				<img src="images\usama.jpg" alt="Usama" width="400px" height="600px"/>
+			</div>  
+            );
+        }
+    }
+    });
+        var Muneeb =React.createClass({
+	getInitialState:function(){
+            return {editing:false};
+        },
+        handleDesc:function(){
+            this.setState({editing:true});
+        },
+        save:function(){
+            this.props.name = this.refs.newNameMuneeb.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+       if(this.state.editing)
+            {
+             return (
+                 <div>
+                    <div className="muneeb">
+				<textarea ref="newNameMuneeb" defaultValue={this.props.name} 
+            className="form-control"></textarea>
+            <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Node js WeGuide</p>
+				<p>Partner:Usama</p>
+				<img src="images\muneeb.jpg" alt="Muneeb" width="400px" height="600px" />
+			</div>
+                 </div>
+             );
+            }
+            else
+            {
+             return (
+                <div className="muneeb">
+                    <h1 ref="name">{this.props.name}</h1>
+                    <button  onClick={this.handleDesc}
+                                className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+                    <p>Node js WeGuide</p>
+                    <p>Partner:Usama</p>
+                    <img src="images\muneeb.jpg" alt="Muneeb" width="400px" height="600px" />
+                </div>
+        );
+            }
+    }
+    });
+    var Awais =React.createClass({
+	getInitialState:function(){
+            return {editing:false};
+        },
+        handleDesc:function(){
+            this.setState({editing:true});
+        },
+        save:function(){
+            this.props.name = this.refs.newNameAwais.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+       if(this.state.editing)
+            {
+             return (
+                 <div>
+                    <div className="awais">
+				<textarea ref="newNameAwais" defaultValue={this.props.name} 
+            className="form-control"></textarea>
+            <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Java</p>
+				<p>Partner:Alone :-(</p>
+				<img src="images\awais.jpg" alt="Awais" width="400px" height="600px" />
+			</div>
+                 </div>
+             );
+            }
+            else
+            {
+             return (
+                <div className="awais">
+                    <h1 ref="name">{this.props.name}</h1>
+                    <button  onClick={this.handleDesc}
+                                className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+                    <p>Java</p>
+                    <p>Partner:Alone :-(</p>
+                    <img src="images\awais.jpg" alt="Awais" width="400px" height="600px" />
+                </div>
+                    );
+            }
+    }
+    });
+    var Danish =React.createClass({
+	getInitialState:function(){
+            return {editing:false};
+        },
+        handleDesc:function(){
+            this.setState({editing:true});
+        },
+        save:function(){
+            this.props.name = this.refs.newNameDanish.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+       if(this.state.editing)
+            {
+             return (
+                 <div>
+                    <div className="danish">
+				<textarea ref="newNameDanish" defaultValue={this.props.name} 
+            className="form-control"></textarea>
+            <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Android</p>
+				<p>Partner: Alone  :-(</p>
+				<img src="images\danish.jpg" alt="Danish" width="400px" height="600px" />
+			</div>
+                 </div>
+             );
+            }
+            else
+            {
+             return (
+                <div className="danish">
+                    <h1 ref="name">{this.props.name}</h1>
+                    <button  onClick={this.handleDesc}
+                                className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+                    <p>Android</p>
+                    <p>Partner:?Alone:-(</p>
+                    <img src="images\danish.jpg" alt="Danish" width="400px" height="600px" />
+                </div>
+        );
+            }
+    }
+    });
+    var Zunnurain =React.createClass({
+	getInitialState:function(){
+            return {editing:false};
+        },
+        handleDesc:function(){
+            this.setState({editing:true});
+        },
+        save:function(){
+            this.props.name = this.refs.newNameZunnurain.value;
+            this.setState({editing:false});
+            return this.props.name;
+        },
+	render:function(){
+       if(this.state.editing)
+            {
+             return (
+                 <div>
+                    <div className="zunnurain">
+				<textarea ref="newNameZunnurain" defaultValue={this.props.name} 
+            className="form-control"></textarea>
+            <button onClick={this.save} className="btn btn-success btn-sm glyphicon glyphicon-floppy-disk" />
+				<p>Node js kolaboard</p>
+				<p>Partner:Alamgir</p>
+				<img src="images\zunnurain.jpg" alt="Zunnurain" width="400px" height="600px" />
+			</div>
+                 </div>
+             );
+            }
+            else
+            {
+             return (
+                <div className="zunnurain">
+                    <h1 ref="name">{this.props.name}</h1>
+                    <button  onClick={this.handleDesc}
+                                className="btn btn-danger glyphicon glyphicon-pencil butn"/>
+                    <p>Node js kolaboard</p>
+                    <p>Partner:Alamgir</p>
+                    <img src="images\zunnurain.jpg" alt="Zunnurain" width="400px" height="600px" />
+                </div>
+        );
+            }
+    }
+    });
+	ReactDOM.render(
+<Main />
+,document.getElementById('container'));
+
+</script>
+
+</body>
+</html>
